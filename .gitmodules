@@ -1,3 +1,6 @@
 [submodule "barnyAnimation"]
 	path = barnyAnimation
 	url = https://github.com/SergeyShcheglov/CoolAnimations/BarnyAnimation
+[submodule "BarnyAnimation"]
+	path = BarnyAnimation
+	url = /Users/sergeyshcheglov/Desktop/SwiftUI simple apps/BarnyAnimation
