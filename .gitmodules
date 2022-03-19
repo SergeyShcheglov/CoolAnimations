@@ -1,0 +1,3 @@
+[submodule "barnyAnimation"]
+	path = barnyAnimation
+	url = https://github.com/SergeyShcheglov/CoolAnimations/BarnyAnimation
