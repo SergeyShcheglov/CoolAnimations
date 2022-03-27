@@ -16,28 +16,25 @@ struct ContentView: View {
     var body: some View {
         HStack {
             HStack {
-                Circle().frame(width: 10)
-                    .opacity(isTyping ? 1 : 0)
+                Circle().frame(width: 5)
+                    .opacity(isTyping ? 0.1 : 1)
+                    .animation(.easeOut(duration: 1).repeatForever(autoreverses: true), value: isTyping)
+
+                Circle().frame(width: 5)
+                    .opacity(isTyping ? 0.1 : 1)
+                    .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: isTyping)
+
                 
-                Circle().frame(width: 10)
-                    .opacity(isTyping2 ? 1 : 0)
-                
-                Circle().frame(width: 10)
-                    .opacity(isTyping3 ? 1 : 0)
+                Circle().frame(width: 5)
+                    .opacity(isTyping ? 0.1 : 1)
+                    .animation(.easeIn(duration: 1).repeatForever(autoreverses: true), value: isTyping)
+
             }
             .foregroundColor(.blue)
             .onAppear {
-                withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false)) {
                     isTyping.toggle()
-                }
-                withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false).delay(0.3)) {
-                    isTyping2.toggle()
-                }
-                withAnimation(Animation.linear(duration: 1).repeatForever(autoreverses: false).delay(0.6)) {
-                    isTyping3.toggle()
-                }
             }
-        Text("is typing")
+            Text("is typing").italic()
         }
     }
 }
