@@ -9,9 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isTyping = false
-    @State private var isTyping2 = false
-    @State private var isTyping3 = false
-
     
     var body: some View {
         HStack {
