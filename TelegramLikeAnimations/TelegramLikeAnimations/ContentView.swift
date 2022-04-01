@@ -8,30 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isTyping = false
     
     var body: some View {
-        HStack {
-            HStack {
-                Circle().frame(width: 5)
-                    .opacity(isTyping ? 0.1 : 1)
-                    .animation(.easeOut(duration: 1).repeatForever(autoreverses: true), value: isTyping)
-
-                Circle().frame(width: 5)
-                    .opacity(isTyping ? 0.1 : 1)
-                    .animation(.easeInOut(duration: 1).repeatForever(autoreverses: true), value: isTyping)
-
-                
-                Circle().frame(width: 5)
-                    .opacity(isTyping ? 0.1 : 1)
-                    .animation(.easeIn(duration: 1).repeatForever(autoreverses: true), value: isTyping)
-
+        NavigationView {
+            List {
+                NavigationLink(destination: TypingAnimations()) {
+                    Text("TypingAnimations")
+                }
+                NavigationLink(destination: EmojiView()) {
+                    Text("Emoji View")
+                }
             }
-            .foregroundColor(.blue)
-            .onAppear {
-                    isTyping.toggle()
-            }
-            Text("is typing").italic()
         }
     }
 }
